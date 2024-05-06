@@ -10,6 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@formkit/icons": "^1.6.2",
+    "@formkit/nuxt": "^1.6.2",
+    "@formkit/themes": "^1.6.2",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
