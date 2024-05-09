@@ -1,70 +1,40 @@
-<script setup>
-import { ref } from 'vue'
-const submitted = ref(false)
-const submitHandler = async () => {
-  // Let's pretend this is an ajax request:
-  await new Promise((r) => setTimeout(r, 1000))
-  submitted.value = true
-}
-</script>
-
 <template>
-  <FormKit
-    type="form"
-    id="registration-example"
-    :form-class="submitted ? 'hide' : 'show'"
-    submit-label="Register"
-    @submit="submitHandler"
-    :actions="false"
-    #default="{ value }"
-  >
-    <h1 class="text-2xl font-bold mb-2">Register!</h1>
-    <p class="text-sm mb-4">
-      You can put any type of element inside a form, not just FormKit inputs
-      (although only FormKit inputs are included with the submission).
-    </p>
-    <FormKit
-      type="text"
-      name="name"
-      label="Your name"
-      placeholder="Jane Doe"
-      help="What do people call you?"
-      validation="required"
-    />
-    <FormKit
-      type="text"
-      name="email"
-      label="Your email"
-      placeholder="jane@example.com"
-      help="What email should we use?"
-      validation="required|email"
-    />
-    <div class="double">
-      <FormKit
-        type="password"
-        name="password"
-        label="Password"
-        validation="required|length:6|matches:/[^a-zA-Z]/"
-        :validation-messages="{
-          matches: 'Please include at least one symbol',
-        }"
-        placeholder="Your password"
-        help="Choose a password"
-      />
-      <FormKit
-        type="password"
-        name="password_confirm"
-        label="Confirm password"
-        placeholder="Confirm password"
-        validation="required|confirm"
-        help="Confirm your password"
-      />
-    </div>
-
-    <FormKit type="submit" label="Register" />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
-  <div v-if="submitted">
-    <h2 class="text-xl text-green-500">Submission successful!</h2>
+  <div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
   </div>
 </template>
