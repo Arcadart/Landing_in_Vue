@@ -1,0 +1,29 @@
+/*ASIDE--------------------------------------*/
+
+.welcome{
+    background-image: url('../img/sun-tornado.svg');
+    background-size: cover;
+}
+
+.text-welcome{
+    color: white;
+    font-size: 12vh;
+}
+
+/*FORM--------------------------------------*/
+
+.imag{
+    width: 20%;
+}
+
+.logo h1{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
